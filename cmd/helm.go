@@ -20,13 +20,13 @@ var helmInstallCmd = &cobra.Command{
 	Use:   "install-and-diagnose",
 	Short: "Install a Helm release and diagnose K8s resources",
 	Example: `  # Install from a local chart
-  mcp-k8s-eye helm install-and-diagnose myapp ./charts/myapp -n myns
+  helm-agent-eye helm install-and-diagnose myapp ./charts/myapp -n myns
 
   # Install from a repo chart with custom values
-  mcp-k8s-eye helm install-and-diagnose myapp stable/nginx -n myns --set replicas=2
+  helm-agent-eye helm install-and-diagnose myapp stable/nginx -n myns --set replicas=2
 
   # Install without waiting for resources
-  mcp-k8s-eye helm install-and-diagnose myapp ./charts/myapp -n myns --no-wait`,
+  helm-agent-eye helm install-and-diagnose myapp ./charts/myapp -n myns --no-wait`,
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 		releaseName := args[0]
@@ -81,13 +81,13 @@ var helmUpgradeCmd = &cobra.Command{
 	Use:   "upgrade-and-diagnose",
 	Short: "Upgrade an existing Helm release and diagnose K8s resources",
 	Example: `  # Upgrade with new chart version
-  mcp-k8s-eye helm upgrade-and-diagnose myapp stable/nginx -n myns --version 1.2.0
+  helm-agent-eye helm upgrade-and-diagnose myapp stable/nginx -n myns --version 1.2.0
 
   # Upgrade reusing existing values
-  mcp-k8s-eye helm upgrade-and-diagnose myapp ./charts/myapp -n myns --reuse-values
+  helm-agent-eye helm upgrade-and-diagnose myapp ./charts/myapp -n myns --reuse-values
 
   # Upgrade with cleanup on failure
-  mcp-k8s-eye helm upgrade-and-diagnose myapp ./charts/myapp -n myns --cleanup-on-fail`,
+  helm-agent-eye helm upgrade-and-diagnose myapp ./charts/myapp -n myns --cleanup-on-fail`,
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 		releaseName := args[0]

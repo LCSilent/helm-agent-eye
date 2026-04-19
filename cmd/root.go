@@ -13,22 +13,22 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "mcp-k8s-eye [command] [options]",
+	Use:   "helm-agent-eye [command] [options]",
 	Short: "Use MCP to manage and analyze your Kubernetes",
 	Long: `
   Use MCP (Model Context Protocol) to monitor your Kubernetes 
 
   # show this help
-  mcp-k8s-eye -h
+  helm-agent-eye -h
 
   # shows version information
-  mcp-k8s-eye --version
+  helm-agent-eye --version
 
   # start STDIO server
-  mcp-k8s-eye
+  helm-agent-eye
 
   # Start SSE server
-  mcp-k8s-eye --sse
+  helm-agent-eye --sse
 }
 
   # TODO: add more examples`,
