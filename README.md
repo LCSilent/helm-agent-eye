@@ -4,6 +4,10 @@
 
 helm-agent-eye 是一个基于 MCP (Model Context Protocol) 的 Kubernetes 集群管理和分析工具，专注于 Helm release 的诊断和监控。
 
+### 架构图
+
+![架构图](架构图.jpg)
+
 主要功能：
 - 使用 MCP 协议监控和分析 Kubernetes 集群
 - 安装和升级 Helm release 并自动诊断相关 K8s 资源
@@ -126,4 +130,3 @@ helm-agent-eye helm upgrade-and-diagnose myapp ./charts/myapp -n myns --cleanup-
 ## 许可证
 
 [MIT License](LICENSE)
-
